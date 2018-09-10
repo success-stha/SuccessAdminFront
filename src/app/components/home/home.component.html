@@ -1,8 +1,40 @@
 <br>
-<br>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">Hello Admin!</h1>
-      <p class="lead">Donate Blood, Save Lives.</p>
+<div style="background-color:#E9ECEF;" align="center">
+  <h3>Hello Admin!</h3>
+  <p class="lead">Donate Blood, Save Lives.</p>
+</div>
+
+<div class="container">
+  <form class="form-horizontal" #f="ngForm" (ngSubmit)="filter(f)">
+    <div class="control-group">
+      <!-- 
+            {{f.value | json}} -->
+      <div class="controls form-inline" id="sandbox-container">
+        <label for="fromDate"><b>From Date</b></label>
+        <input type="date" name="fromDate" ngModel placeholder="dd/mm/yyyy"> &nbsp; &nbsp; <label for="toDate"><b>To Date</b></label>
+        <input type="date" name="toDate" ngModel placeholder="dd/mm/yyyy">
+        <label class="control-label"></label>
+        &nbsp;&nbsp;<button class="btn btn-danger" type="reset">Reset</button>&nbsp;&nbsp;
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
     </div>
-  </div>
+  </form>
+</div>
+
+<br>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <th>Entry Date</th>
+      <th>Blood Type</th>
+      <th>Total Pint</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of details">
+        <td>{{d.ENTRY_DATE}}</td>
+        <td>{{d.BLOOD_TYPE}}</td>
+        <td>{{d.SUM}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

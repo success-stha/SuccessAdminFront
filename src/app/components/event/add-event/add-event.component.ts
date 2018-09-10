@@ -4,6 +4,7 @@ import { EventService } from '../../../services/eventService/event.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
@@ -14,7 +15,8 @@ export class AddEventComponent implements OnInit {
   public event: Event;
   public eventType: String;
 
-  constructor(private eventService: EventService, private router: Router, private http: HttpClient) { }
+  constructor(private eventService: EventService, private router: Router, private http: HttpClient) {
+  }
 
   ngOnInit() {
     this.event = this.eventService.getter();
