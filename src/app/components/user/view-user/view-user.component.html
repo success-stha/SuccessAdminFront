@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <table class="table table-striped">
         <thead>
             <th>Id</th>
@@ -28,8 +28,7 @@
                 <td>{{user.phoneNo}}</td>
                 <td>{{user.email}}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteRecord(b)">Delete</button>
-                    <button class="btn btn-success" (click)="updateRecord(b)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
                 </td>
             </tr>
         </tbody>

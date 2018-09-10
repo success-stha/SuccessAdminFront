@@ -24,7 +24,7 @@ export class ViewUserComponent implements OnInit {
     })
   }
 
-  deleteRecord(user) {
+  deleteUser(user) {
     this.userService.deleteUser(user.userId).subscribe(() => {
       this.users.splice(this.users.indexOf(user), 1);
     }, (error) => {
