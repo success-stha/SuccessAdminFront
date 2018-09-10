@@ -15,9 +15,9 @@
                             <div class="col-lg-9">
                                 <input required maxlength="40" class="form-control" type="text" name="title" [(ngModel)]="event.eventTitle" [ngClass]="{'is-invalid':titleControl.errors && titleControl.touched}"
                                     #titleControl="ngModel">
-                                <span class="help-block text-danger" *ngIf="titleControl.invalid && titleControl.touched">
-                                    Event Title is required!!
-                                </span>
+                                    <span [hidden]="!titleControl.errors?.required" class="invalid-feedback text-danger">
+                                        Event Title is required!
+                                    </span>
                             </div>
                         </div>
 
@@ -26,9 +26,9 @@
                             <div class="col-lg-9">
                                 <input required maxlength="40" class="form-control" type="text" name="address" [(ngModel)]="event.eventAddress" [ngClass]="{'is-invalid':addressControl.errors && addressControl.touched}"
                                     #addressControl="ngModel">
-                                <span class="help-block text-danger" *ngIf="addressControl.invalid && addressControl.touched">
-                                    Address is required!!
-                                </span>
+                                    <span [hidden]="!addressControl.errors?.required" class="invalid-feedback text-danger">
+                                        Event Address is required!
+                                    </span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -36,9 +36,9 @@
                             <div class="col-lg-9">
                                 <input required class="form-control" type="date" name="eventDate" [(ngModel)]="event.eventDate" [ngClass]="{'is-invalid':dateControl.errors && dateControl.touched}"
                                     #dateControl="ngModel">
-                                <span class="help-block text-danger" *ngIf="dateControl.invalid && dateControl.touched">
-                                    Event is required!!
-                                </span>
+                                    <span [hidden]="!dateControl.errors?.required" class="invalid-feedback text-danger">
+                                        Event Date is required!
+                                    </span>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -46,20 +46,20 @@
                             <div class="col-lg-9">
                                 <input required class="form-control" type="text" name="eventTime" [(ngModel)]="event.eventTime" [ngClass]="{'is-invalid':timeControl.errors && timeControl.touched}"
                                     #timeControl="ngModel">
-                                <span class="help-block text-danger" *ngIf="timeControl.invalid && timeControl.touched">
-                                    Time is required!!
-                                </span>
+                                    <span [hidden]="!timeControl.errors?.required" class="invalid-feedback text-danger">
+                                        Event Time is required!
+                                    </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label control-label">Description</label>
                             <div class="col-lg-9">
-                                <textarea required class="form-control" rows="3" type="text" name="eventDescription" [(ngModel)]="event.eventDescription"
+                                <textarea class="form-control" rows="3" type="text" name="eventDescription" [(ngModel)]="event.eventDescription"
                                     [ngClass]="{'is-invalid':descControl.errors && descControl.touched}" #descControl="ngModel"></textarea>
-                                <span class="help-block text-danger" *ngIf="descControl.invalid && descControl.touched">
-                                    Description is required!!
-                                </span>
+                                    <span [hidden]="!descControl.errors?.required" class="invalid-feedback text-danger">
+                                        Description is required!
+                                    </span>
                             </div>
                         </div>
                         <div class="form-group row">

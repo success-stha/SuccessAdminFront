@@ -29,8 +29,8 @@
                                     <option value="{{bt.bloodGroupId}}" *ngFor="let bt of bloodGroup">{{bt.bloodType}}</option>
 
                                 </select>
-                                <span class="help-block text-danger" *ngIf="typeControl.invalid && typeControl.touched">
-                                    Blood Group is required!!
+                                <span [hidden]="!typeControl.errors?.required" class="invalid-feedback text-danger">
+                                    Blood Type is required!
                                 </span>
                             </div>
                         </div>
@@ -39,8 +39,8 @@
                             <label class="col-lg-3 col-form-label control-label">Pint</label>
                             <div class="col-lg-9">
                                 <input required class="form-control" type="number" name="pint" [(ngModel)]="bloodRecord.pint" [ngClass]="{'is-invalid':pintControl.errors && pintControl.touched}" #pintControl="ngModel" value="0">
-                                <span class="help-block text-danger" *ngIf="pintControl.invalid && pintControl.touched">
-                                    Pint is required!!
+                                <span [hidden]="!pintControl.errors?.required" class="invalid-feedback text-danger">
+                                    Pint is required!
                                 </span>
                             </div>
                         </div>
@@ -49,20 +49,23 @@
                             <label class="col-lg-3 col-form-label control-label">Donor's Name</label>
                             <div class="col-lg-9">
                                 <input required maxlength="40" class="form-control" type="text" name="donorName" [(ngModel)]="bloodRecord.donorName" [ngClass]="{'is-invalid':donorControl.errors && donorControl.touched}" #donorControl="ngModel">
-                                <div class="help-block text-danger" *ngIf="donorControl.invalid && donorControl.touched">
-                                    Donor's Name is required!!
-                                </div>
+                                <span [hidden]="!donorControl.errors?.required" class="invalid-feedback text-danger">
+                                    Donor's Name is required!
+                                </span>
                             </div>
                         </div>
 
                         <div class="form-group row has-error">
                             <label class="col-lg-3 col-form-label control-label">Donor's Contact Number:</label>
                             <div class="col-lg-9">
-                                <input required maxlength="40" class="form-control" type="number" name="donorPhone" [(ngModel)]="bloodRecord.donorPhone" [ngClass]="{'is-invalid':dControl.errors && dControl.touched}"
+                                <input required maxlength="40" class="form-control" type="number" pattern=".{9,10}" name="donorPhone" [(ngModel)]="bloodRecord.donorPhone" [ngClass]="{'is-invalid':dControl.errors && dControl.touched}"
                                     #dControl="ngModel">
-                                <div class="help-block text-danger" *ngIf="dControl.invalid && dControl.touched">
-                                    Donor's Contact Number is required!!
-                                </div>
+                                    <span [hidden]="!dControl.errors?.required" class="invalid-feedback text-danger">
+                                        Donor's Contact Number is required!
+                                    </span>
+                                    <span [hidden]="!dControl.errors?.pattern" class="invalid-feedback text-danger">
+                                        Donor's Contact Number is invalid!
+                                    </span>
                             </div>
                         </div>
 
