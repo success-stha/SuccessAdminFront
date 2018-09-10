@@ -12,11 +12,16 @@ import { HttpClient } from '@angular/common/http';
 export class AddEventComponent implements OnInit {
 
   public event: Event;
+  public eventType: String;
 
   constructor(private eventService: EventService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
     this.event = this.eventService.getter();
+    if (this.event.eventId == undefined)
+    this.eventType="Create";
+    else
+    this.eventType="Update";
   }
 
   processForm() {

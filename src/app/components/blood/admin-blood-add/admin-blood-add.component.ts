@@ -15,12 +15,18 @@ export class AdminBloodAddComponent implements OnInit {
   public bloodRecord: any;
   bloodGroup: BloodGroup;
   selectedType: number=1;
+  addType: String;
 
   constructor(private sharedService: SharedService, private bloodService: BloodService, private router: Router) { }
 
   ngOnInit() {
 
     this.bloodRecord = this.bloodService.getter();
+
+    if (this.bloodRecord.bloodRecordId == undefined)
+    this.addType="Add";
+    else
+    this.addType="Update";
 
     if (this.bloodRecord.bloodRecordId != undefined){
       this.selectedType = this.bloodRecord.bloodGroup.bloodGroupId;
