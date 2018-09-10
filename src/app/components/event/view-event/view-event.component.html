@@ -1,0 +1,29 @@
+<div class="container">
+
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Event Title</th>
+            <th>Event Address</th>
+            <th>Event Date</th>
+            <th>Event Time</th>
+            <th>Event Description</th>
+            <th>Operations</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let eve of events">
+                <td>{{eve.eventId}}</td>
+                <td>{{eve.eventTitle}}</td>
+                <td>{{eve.eventAddress}}</td>
+                <td>{{eve.eventDate}}</td>
+                <td>{{eve.eventTime}}</td>
+                <td>{{eve.eventDescription}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteEvent(eve)">Delete</button>
+                    <button class="btn btn-success" (click)="updateEvent(eve)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="newEvent()">Add New Event</button>
+</div>

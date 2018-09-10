@@ -1,0 +1,27 @@
+<div class="container">
+
+    <table class="table table-striped">
+        <thead>
+            <th>Id</th>
+            <th>Blood Type</th>
+            <th>Pint</th>
+            <th>Donor's Name</th>
+            <th>Donor's Contact Number</th>
+            <th>Operations</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of bloodRecords">
+                <td>{{b.bloodRecordId}}</td>
+                <td>{{b.bloodGroup.bloodType}}</td>
+                <td>{{b.pint}}</td>
+                <td>{{b.donorName}}</td>
+                <td>{{b.donorPhone}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteRecord(b)">Delete</button>
+                    <button class="btn btn-success" (click)="updateRecord(b)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="newRecord()">Add New Blood Record</button>
+</div>
