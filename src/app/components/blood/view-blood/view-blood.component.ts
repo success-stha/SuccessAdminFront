@@ -24,13 +24,14 @@ export class ViewBloodComponent implements OnInit {
   }
 
   deleteRecord(record) {
+    if(window.confirm('Are sure you want to delete this item ?')){
     this.bloodService.deleteRecord(record.bloodRecordId).subscribe(() => {
       this.bloodRecords.splice(this.bloodRecords.indexOf(record), 1);
     }, (error) => {
       console.log(error);
 
     });
-  }
+  }}
 
 
   updateRecord(record) {

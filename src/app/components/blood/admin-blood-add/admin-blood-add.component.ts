@@ -5,6 +5,7 @@ import { SharedService } from '../../../services/shared/shared.service';
 
 import { Router } from '@angular/router';
 import { BloodService } from '../../../services/bloodService/blood.service';
+import { BloodRecord } from '../../../models/BloodRecord';
 
 @Component({
   selector: 'app-admin-blood-add',
@@ -57,6 +58,7 @@ export class AdminBloodAddComponent implements OnInit {
       this.bloodService.updateRecord(this.bloodRecord)
         .subscribe((bloodRecord) => {
           console.log(bloodRecord);
+          this.bloodService.setter(new BloodRecord());
           this.router.navigate(['records']);
         }, (error) => {
           console.log(error);

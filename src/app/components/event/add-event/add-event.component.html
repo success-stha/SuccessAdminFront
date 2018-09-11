@@ -34,8 +34,8 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label control-label">Event Date</label>
                             <div class="col-lg-9">
-                                <input required class="form-control" type="date" name="eventDate" [(ngModel)]="event.eventDate" [ngClass]="{'is-invalid':dateControl.errors && dateControl.touched}"
-                                    #dateControl="ngModel">
+                                <input required class="form-control" type="date" min="{{today | date: 'yyyy-MM-dd'}}" name="eventDate" [(ngModel)]="event.eventDate" [ngClass]="{'is-invalid':dateControl.errors && dateControl.touched}"
+                                    #dateControl="ngModel">                
                                     <span [hidden]="!dateControl.errors?.required" class="invalid-feedback text-danger">
                                         Event Date is required!
                                     </span>

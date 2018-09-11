@@ -24,12 +24,14 @@ export class ViewEventComponent implements OnInit {
   }
 
   deleteEvent(event) {
+    if(window.confirm('Are sure you want to delete this item ?')){
     this.eventService.deleteEvent(event.eventId).subscribe(() => {
       this.events.splice(this.events.indexOf(event), 1);
     }, (error) => {
       console.log(error);
     });
-  }
+  }}
+  
 
   updateEvent(event) {
     this.eventService.setter(event);

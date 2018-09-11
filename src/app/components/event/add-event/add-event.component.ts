@@ -14,6 +14,7 @@ export class AddEventComponent implements OnInit {
 
   public event: Event;
   public eventType: String;
+  today: number = Date.now();
 
   constructor(private eventService: EventService, private router: Router, private http: HttpClient) {
   }
@@ -37,6 +38,7 @@ export class AddEventComponent implements OnInit {
     } else {
       this.eventService.updateEvent(this.event).subscribe((event) => {
         console.log(event);
+        this.eventService.setter(new Event());
         this.router.navigate(['/events']);
       }, (error) => {
         console.log(error);
