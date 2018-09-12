@@ -25,12 +25,14 @@ export class ViewUserComponent implements OnInit {
   }
 
   deleteUser(user) {
-    this.userService.deleteUser(user.userId).subscribe(() => {
-      this.users.splice(this.users.indexOf(user), 1);
-    }, (error) => {
-      console.log(error);
+    if (window.confirm('Are sure you want to delete this item ?')) {
+      this.userService.deleteUser(user.userId).subscribe(() => {
+        this.users.splice(this.users.indexOf(user), 1);
+      }, (error) => {
+        console.log(error);
 
-    });
+      });
+    }
   }
 
 

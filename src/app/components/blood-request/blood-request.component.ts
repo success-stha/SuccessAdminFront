@@ -25,7 +25,7 @@ export class BloodRequestComponent implements OnInit {
     });
   }
 
-  approveRequet(id){
+  approveRequest(id){
     let record;
     for (let a of this.bloodRequestData){
       if (id == a.bloodRequestId){
@@ -35,20 +35,17 @@ export class BloodRequestComponent implements OnInit {
 
     this.bloodRequest.approve(record).subscribe((data:any) => {
       if (data){
-
       }
     });
   }
 
-
-  denyRequest(b) {
-    
+  denyRequest(b) { 
+    if(window.confirm('Are sure you want to deny this request ?')){
     this.bloodRequest.deleteRequest(b.bloodRequestId).subscribe(() => {
       this.bloodRequestData.splice(this.bloodRequestData.indexOf(b), 1);
     }, (error) => {
       console.log(error);
-
-    });
-  }}
-
+    });}
+  }
+}
 

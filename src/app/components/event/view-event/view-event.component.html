@@ -1,5 +1,6 @@
+<br>
 <div class="container">
-
+    <h2 align="center"> Event Details</h2>
     <table class="table table-striped">
         <thead>
             <th>Id</th>
@@ -19,9 +20,9 @@
                 <td>{{eve.eventTime}}</td>
                 <td>{{eve.eventDescription}}</td>
                 <td>
-                    <button class="btn btn-danger"  data-toggle="modal" (click)="deleteEvent(eve)" data-target="#exampleModalLong">Delete</button>
+                    <button class="btn btn-danger" data-toggle="modal" (click)="deleteEvent(eve)" data-target="#exampleModalLong">Delete</button>
                     <button class="btn btn-success" (click)="updateEvent(eve)">Edit</button>
-                    
+
                 </td>
             </tr>
         </tbody>
