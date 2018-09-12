@@ -40,7 +40,15 @@ export class BloodRequestComponent implements OnInit {
     });
   }
 
-  // denyRequest(){
-  //
-  // }
-}
+
+  denyRequest(b) {
+    
+    this.bloodRequest.deleteRequest(b.bloodRequestId).subscribe(() => {
+      this.bloodRequestData.splice(this.bloodRequestData.indexOf(b), 1);
+    }, (error) => {
+      console.log(error);
+
+    });
+  }}
+
+

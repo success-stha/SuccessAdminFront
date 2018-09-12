@@ -1,0 +1,21 @@
+<br/>
+<h2 align="center"> Total Blood Count</h2>
+
+<div class="container">
+
+  <table class="table table-striped">
+      <thead>
+          <th>Id</th>
+          <th>Blood Type</th>
+          <th>Total Pint</th>
+       </thead>
+      <tbody>
+          <tr *ngFor="let c of bloodCount">
+              <td>{{c.id}}</td>
+              <td>{{c.bloodGroup.bloodType}}</td>
+              <td>{{c.counter}}</td>
+      
+          </tr>
+      </tbody>
+  </table>
+</div>

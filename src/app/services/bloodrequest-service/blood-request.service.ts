@@ -18,12 +18,13 @@ export class BloodRequestService {
     return this.http.get(this.baseUrl + 'requests');
   }
 
-  // deleteRecord(id: number) {
-  //   return this.http.delete(this.baseUrl + 'records/' + id);
-  // }
+  deleteRequest(id: number) {
+   return this.http.delete(this.baseUrl + 'requests/' + id);
+ }
 
   approve(bloodRecord: BloodRecord): Observable<BloodRecord> {
     return this.http.post<BloodRecord>(this.baseUrl + 'approve', bloodRecord);
+     
   }
   //
   // updateRecord(bloodRecord: BloodRecord) {

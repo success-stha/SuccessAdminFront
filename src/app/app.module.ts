@@ -15,6 +15,7 @@ import { ViewBloodComponent } from './components/blood/view-blood/view-blood.com
 import { ViewUserComponent } from './components/user/view-user/view-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { BloodRequestComponent } from './components/blood-request/blood-request.component';
+import { ViewBloodCountComponent } from './components/view-blood-count/view-blood-count.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BloodRequestComponent } from './components/blood-request/blood-request.
     ViewBloodComponent,
     ViewUserComponent,
     HomeComponent,
-    BloodRequestComponent
+    BloodRequestComponent,
+    ViewBloodCountComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { ViewBloodComponent } from './components/blood/view-blood/view-blood.com
 import { ViewUserComponent } from './components/user/view-user/view-user.component';
 import { HomeComponent } from './components/home/home.component';
 import {BloodRequestComponent} from './components/blood-request/blood-request.component';
+import { ViewBloodCountComponent } from './components/view-blood-count/view-blood-count.component';
 
 const routes: Routes = [
   {path: '', redirectTo:"/home", pathMatch:'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'users', component: ViewUserComponent},
   {path: 'addevent', component: AddEventComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'bloodRequest', component: BloodRequestComponent}
+  {path: 'bloodRequest', component: BloodRequestComponent},
+  {path: 'bloodCount', component: ViewBloodCountComponent}
 ];
 
 @NgModule({
