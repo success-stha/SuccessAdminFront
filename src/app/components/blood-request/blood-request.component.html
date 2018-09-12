@@ -1,0 +1,24 @@
+<div class="container">
+
+  <table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>Blood Type</th>
+    <th>Pint</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let b of bloodRequestData">
+      <td>{{b.bloodRequestId}}</td>
+      <td>{{b.bloodGroup.bloodType}}</td>
+      <td>{{b.pint}}</td>
+      <td>{{b.donorName}}</td>
+      <td>{{b.donorPhone}}</td>
+      <td>
+        <button class="btn btn-success" (click)="approveRequet(b.bloodRequestId)">Approve</button>
+        <!--<button class="btn btn-danger" (click)="denyRequest()">Deny</button>-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--<button class="btn btn-primary" (click)="newRecord()">Add New Blood Record</button>-->
+</div>

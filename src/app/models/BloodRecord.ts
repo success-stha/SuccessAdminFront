@@ -6,4 +6,5 @@ public pint:number;
 public donorName:string;
 public entryDate:Date;
 public donorPhone:number;
+  bloodRequestId:number;
 }
