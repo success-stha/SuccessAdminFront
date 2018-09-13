@@ -9,6 +9,7 @@ import {forEach} from '../../../../node_modules/@angular/router/src/utils/collec
   styleUrls: ['./blood-request.component.css']
 })
 export class BloodRequestComponent implements OnInit {
+  message:string;
   bloodRequestData: BloodRecord[];
 
   constructor(private bloodRequest: BloodRequestService) { }
@@ -25,16 +26,15 @@ export class BloodRequestComponent implements OnInit {
     });
   }
 
-  approveRequest(id){
-    let record;
-    for (let a of this.bloodRequestData){
-      if (id == a.bloodRequestId){
-        record = a;
-      }
-    }
-
-    this.bloodRequest.approve(record).subscribe((data:any) => {
+  approveRequest(b){
+    this.bloodRequest.approve(b).subscribe((data:any) => {
       if (data){
+        if(data.status){
+          this.getBloodRequest();
+        }else{
+          this.message = "Failed"
+          console.log("false");
+        }
       }
     });
   }

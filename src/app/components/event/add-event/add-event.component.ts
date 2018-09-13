@@ -22,7 +22,7 @@ export class AddEventComponent implements OnInit {
   ngOnInit() {
     this.event = this.eventService.getter();
     if (this.event.eventId == undefined)
-    this.eventType="Create";
+    this.eventType="Add";
     else
     this.eventType="Update";
   }
