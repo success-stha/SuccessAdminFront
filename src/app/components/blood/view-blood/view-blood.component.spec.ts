@@ -8,9 +8,9 @@ describe('ViewBloodComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewBloodComponent ]
+      declarations: [ViewBloodComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

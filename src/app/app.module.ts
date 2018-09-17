@@ -9,13 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AddUserComponent } from './components/user/add-user/add-user.component';
 import { AddEventComponent } from './components/event/add-event/add-event.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ViewEventComponent } from './components/event/view-event/view-event.component';
 import { ViewBloodComponent } from './components/blood/view-blood/view-blood.component';
 import { ViewUserComponent } from './components/user/view-user/view-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { BloodRequestComponent } from './components/blood-request/blood-request.component';
 import { ViewBloodCountComponent } from './components/view-blood-count/view-blood-count.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { AppHttpInterceptor } from './app-http-interceptor';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ViewBloodCountComponent } from './components/view-blood-count/view-bloo
     ViewUserComponent,
     HomeComponent,
     BloodRequestComponent,
-    ViewBloodCountComponent
+    ViewBloodCountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,11 @@ import { ViewBloodCountComponent } from './components/view-blood-count/view-bloo
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers:  [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AppHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

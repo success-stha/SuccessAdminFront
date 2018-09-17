@@ -15,7 +15,7 @@ import { BloodRecord } from '../../../models/BloodRecord';
 export class AdminBloodAddComponent implements OnInit {
   public bloodRecord: any;
   bloodGroup: BloodGroup;
-  selectedType: number=1;
+  selectedType: number = 1;
   addType: String;
 
   constructor(private sharedService: SharedService, private bloodService: BloodService, private router: Router) { }
@@ -25,11 +25,11 @@ export class AdminBloodAddComponent implements OnInit {
     this.bloodRecord = this.bloodService.getter();
 
     if (this.bloodRecord.bloodRecordId == undefined)
-    this.addType="Add";
+      this.addType = "Add";
     else
-    this.addType="Update";
+      this.addType = "Update";
 
-    if (this.bloodRecord.bloodRecordId != undefined){
+    if (this.bloodRecord.bloodRecordId != undefined) {
       this.selectedType = this.bloodRecord.bloodGroup.bloodGroupId;
     }
 

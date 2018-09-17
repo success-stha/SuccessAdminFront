@@ -8,9 +8,9 @@ describe('AdminHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminHeaderComponent ]
+      declarations: [AdminHeaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

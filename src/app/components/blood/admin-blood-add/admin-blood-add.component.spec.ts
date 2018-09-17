@@ -8,9 +8,9 @@ describe('AdminBloodAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminBloodAddComponent ]
+      declarations: [AdminBloodAddComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -22,9 +22,9 @@ export class AddEventComponent implements OnInit {
   ngOnInit() {
     this.event = this.eventService.getter();
     if (this.event.eventId == undefined)
-    this.eventType="Add";
+      this.eventType = "Add";
     else
-    this.eventType="Update";
+      this.eventType = "Update";
   }
 
   processForm() {

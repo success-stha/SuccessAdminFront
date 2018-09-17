@@ -4,21 +4,21 @@
   <h2 align="center">Blood Requests</h2>
   <table class="table table-striped">
     <thead>
-    <th>Id</th>
-    <th>Blood Type</th>
-    <th>Pint</th>
-    <th></th>
+      <th>Id</th>
+      <th>Blood Type</th>
+      <th>Pint</th>
+      <th></th>
     </thead>
     <tbody>
-    <tr *ngFor="let b of bloodRequestData">
-      <td>{{b.bloodRequestId}}</td>
-      <td>{{b.bloodGroup.bloodType}}</td>
-      <td>{{b.pint}}</td>
-      <td>
-        <button class="btn btn-success" (click)="approveRequest(b)">Approve</button>&nbsp;
-      <button class="btn btn-danger" (click)="denyRequest(b)">Deny</button>
-      </td>
-    </tr>
+      <tr *ngFor="let b of bloodRequestData">
+        <td>{{b.bloodRequestId}}</td>
+        <td>{{b.bloodGroup.bloodType}}</td>
+        <td>{{b.pint}}</td>
+        <td>
+          <button class="btn btn-success" (click)="approveRequest(b)">Approve</button>&nbsp;
+          <button class="btn btn-danger" (click)="denyRequest(b)">Deny</button>
+        </td>
+      </tr>
     </tbody>
   </table>
   <!--<button class="btn btn-primary" (click)="newRecord()">Add New Blood Record</button>-->

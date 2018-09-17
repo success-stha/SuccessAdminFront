@@ -10,9 +10,11 @@ import { ViewUserComponent } from './components/user/view-user/view-user.compone
 import { HomeComponent } from './components/home/home.component';
 import {BloodRequestComponent} from './components/blood-request/blood-request.component';
 import { ViewBloodCountComponent } from './components/view-blood-count/view-blood-count.component';
+import { LoginComponent } from './components/login/login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo:"/home", pathMatch:'full'},
+  {path: 'login', component: LoginComponent},
   {path: 'addblood', component: AdminBloodAddComponent},
   {path: 'adduser', component: AddUserComponent},
   {path: 'events', component: ViewEventComponent},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../../services/shared/token/token.service';
 
 
 @Component({
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tokenService: TokenService) { }
 
+
+  logout(): void {
+    sessionStorage.removeItem('token');
+    this.tokenService.tokenEmitter.next(null);
+  }
   ngOnInit() {
   }
 
